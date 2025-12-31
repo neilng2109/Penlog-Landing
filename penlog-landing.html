@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PenLog - Professional Penetration Management for Ship Dry Docks</title>
+    <meta name="description" content="Real-time penetration tracking for ship dry docks. Built by a First ETO with 30+ years maritime experience. Professional, simple, effective.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#1a2b3d',
+                            950: '#0f1e2e',
+                        },
+                        'teal': {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-navy-900">PenLog</span>
+                </div>
+                
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-navy-800 transition">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-navy-800 transition">How It Works</a>
+                    <a href="#faq" class="text-gray-600 hover:text-navy-800 transition">FAQ</a>
+                    <a href="#signin" class="text-gray-600 hover:text-navy-800 transition">Sign In</a>
+                    <button class="bg-navy-800 text-white px-6 py-2 rounded-lg hover:bg-navy-900 transition font-medium">
+                        Request Access
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-white to-gray-50 py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto">
+                <!-- Badge -->
+                <div class="inline-flex items-center space-x-2 bg-teal-50 text-teal-700 px-4 py-2 rounded-full mb-8">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="font-medium">Built by Maritime Professionals • SOLAS Compliant</span>
+                </div>
+                
+                <!-- Headline -->
+                <h1 class="text-5xl md:text-6xl font-bold text-navy-900 leading-tight mb-6">
+                    Dry Dock Penetrations.<br>
+                    Finally <span class="bg-gradient-to-r from-navy-700 to-teal-500 bg-clip-text text-transparent">Under Control.</span>
+                </h1>
+                
+                <!-- Subheadline -->
+                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+                    Professional penetration management for maritime drydocks. Real-time tracking across contractors. 
+                    SOLAS-ready documentation. Built by maritime professionals who understand your workflow.
+                </p>
+                
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <button class="bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-teal-600 transition font-semibold text-lg shadow-lg hover:shadow-xl">
+                        Request Access →
+                    </button>
+                    <button class="bg-white text-navy-800 px-8 py-4 rounded-lg hover:bg-gray-50 transition font-semibold text-lg border-2 border-navy-800">
+                        Watch Demo
+                    </button>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm text-gray-600 max-w-3xl mx-auto">
+                    <div class="flex items-center justify-center space-x-2">
+                        <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>Professional platform</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-2">
+                        <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>SOLAS-ready exports</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-2">
+                        <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>No contractor login</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-2">
+                        <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>Used by maritime pros</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <!-- TODO: Replace the mockup below with actual dashboard screenshot -->
+    <!-- Suggested: Take screenshot of real dashboard, blur ship name if needed, replace entire mockup section with: -->
+    <!-- <img src="dashboard-screenshot.png" alt="PenLog Dashboard" class="rounded-2xl shadow-2xl"> -->
+    <!-- Dashboard Preview -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-navy-900 mb-4">Real-Time Visibility</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Track all contractors, statuses, and progress in one professional dashboard. 
+                See exactly what's open, closed, and verified at a glance.
+            </p>
+        </div>
+        
+        <!-- Real Dashboard Screenshot -->
+        <div class="max-w-6xl mx-auto">
+            <img src="dashboard-screenshot.png" 
+                 alt="PenLog Dashboard showing real-time penetration tracking across multiple contractors" 
+                 class="rounded-md shadow-2xl w-full border border-gray-200">
+            <p class="text-center text-sm text-gray-500 mt-4">
+                Live dashboard from P&O Ventura drydock • Managing 7 penetrations across 4 contractors
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-navy-900 mb-4">Built for Dry Dock Reality</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Every feature designed for the chaos of real dry docks. No theoretical solutions—just what actually works.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">No-Login Contractor Access</h3>
+                    <p class="text-gray-600">Contractors use simple mobile links. No app downloads, no accounts, no training required.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Photo Documentation</h3>
+                    <p class="text-gray-600">Every pen opening and closing captured with timestamped photos. Complete visual audit trail.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Flag State Reports</h3>
+                    <p class="text-gray-600">One-click exports formatted for Bermuda, Panama, and other maritime authorities.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Multi-Contractor Coordination</h3>
+                    <p class="text-gray-600">15+ contractors? No problem. Everyone updates the same source of truth in real-time.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Smart Notifications</h3>
+                    <p class="text-gray-600">Alerts when pens are opened, closed, or approaching verification deadlines.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Verification Workflow</h3>
+                    <p class="text-gray-600">Structured sign-off process ensures nothing slips through before embarkation.</p>
+                </div>
+                
+                <!-- Feature 7 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Fleet Analytics</h3>
+                    <p class="text-gray-600">Premium: Compare dry dock performance across your entire fleet. Identify trends.</p>
+                </div>
+                
+                <!-- Feature 8 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Works Anywhere</h3>
+                    <p class="text-gray-600">Web-based platform works in any shipyard on any device. No infrastructure needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-navy-900 mb-4">From Chaos to Clarity</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Four simple steps to transform your dry dock penetration management.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="bg-navy-900 text-white rounded-2xl p-8 h-full">
+                        <div class="text-teal-400 font-bold text-sm mb-2">STEP 01</div>
+                        <div class="w-16 h-16 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Create Your Project</h3>
+                        <p class="text-gray-300">Pen supervisor sets up the dry dock project in minutes. Add ship details, define zones, and invite stakeholders.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="bg-navy-900 text-white rounded-2xl p-8 h-full">
+                        <div class="text-teal-400 font-bold text-sm mb-2">STEP 02</div>
+                        <div class="w-16 h-16 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Share Simple Links</h3>
+                        <p class="text-gray-300">Each contractor gets a unique link. They open it on their phone, report pen status, snap photos. That's it.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="bg-navy-900 text-white rounded-2xl p-8 h-full">
+                        <div class="text-teal-400 font-bold text-sm mb-2">STEP 03</div>
+                        <div class="w-16 h-16 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Track in Real-Time</h3>
+                        <p class="text-gray-300">Dashboard updates instantly. See exactly what's open, closed, and verified. No more chasing WhatsApp messages.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="bg-navy-900 text-white rounded-2xl p-8 h-full">
+                        <div class="text-teal-400 font-bold text-sm mb-2">STEP 04</div>
+                        <div class="w-16 h-16 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Export & Complete</h3>
+                        <p class="text-gray-300">Generate Flag State-ready reports. Complete verification workflow. Ship sails on schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-navy-900 mb-4">Why Teams Switch to PenLog</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    See how PenLog compares to traditional approaches.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-navy-900 text-white">
+                                <th class="px-6 py-4 text-left font-semibold">Feature</th>
+                                <th class="px-6 py-4 text-center font-semibold">PenLog</th>
+                                <th class="px-6 py-4 text-center font-semibold">Excel Spreadsheets</th>
+                                <th class="px-6 py-4 text-center font-semibold">Enterprise Systems</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-900">Setup time</td>
+                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">5 minutes</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Immediate</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Days to weeks</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Cost</td>
+                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">Free</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Free (but manual)</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Subscription fees</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-900">Contractor access</td>
+                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">Simple links</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Email attachments</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Login accounts</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Infrastructure required</td>
+                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">None</td>
+                                <td class="px-6 py-4 text-center text-gray-500">None</td>
+                                <td class="px-6 py-4 text-center text-gray-500">May require QR codes</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-900">On-site support</td>
+                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">Not required</td>
+                                <td class="px-6 py-4 text-center text-gray-500">N/A</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Sometimes required</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Mobile access</td>
+                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">Any browser</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Limited</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Specific apps</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-900">Real-time updates</td>
+                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">Yes</td>
+                                <td class="px-6 py-4 text-center text-gray-500">No (manual)</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Yes</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Flag State reports</td>
+                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">One-click export</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Manual compilation</td>
+                                <td class="px-6 py-4 text-center text-gray-500">Export available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-navy-900 mb-4">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">How much does PenLog cost?</h3>
+                    <p class="text-gray-600">
+                        PenLog offers flexible pricing based on your needs. We work with individual pen supervisors, 
+                        contractors, and fleet operators. Contact us to discuss the best option for your operation. 
+                        Early access users receive preferred pricing.
+                    </p>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Do contractors need to create accounts?</h3>
+                    <p class="text-gray-600">
+                        No! Contractors get a simple link. They click it, submit pen status, upload photos, and 
+                        they're done. No app downloads, no passwords, no training required.
+                    </p>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Is our data secure?</h3>
+                    <p class="text-gray-600">
+                        Yes. All data is encrypted in transit and at rest. Photos are stored securely. We're GDPR 
+                        compliant. Your dry dock data is yours—you can export it anytime in standard formats (PDF, Excel).
+                    </p>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Does this work offline?</h3>
+                    <p class="text-gray-600">
+                        Currently, PenLog requires internet connection. Offline mode is on our roadmap for late 2026. 
+                        Most shipyards have WiFi, but we understand connectivity can be spotty in some areas.
+                    </p>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Is PenLog accepted by Flag State inspectors?</h3>
+                    <p class="text-gray-600">
+                        PenLog is designed to meet SOLAS Chapter II-2 documentation requirements for bulkhead penetrations. 
+                        Our export format includes all information typically required during Flag State inspections. We're 
+                        currently pursuing official approval from Bermuda, Panama, Marshall Islands, and Liberia Flag 
+                        administrations. We recommend discussing PenLog with your Flag State surveyor before the dry dock.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-gradient-to-br from-navy-900 to-navy-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to End the Spreadsheet Chaos?</h2>
+            <p class="text-xl text-gray-300 mb-10">
+                See how PenLog transforms your drydock coordination. Request access today.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <button class="bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-teal-600 transition font-semibold text-lg shadow-lg hover:shadow-xl">
+                    Request Access →
+                </button>
+                <button class="bg-white text-navy-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-semibold text-lg">
+                    Schedule Demo
+                </button>
+            </div>
+            
+            <p class="text-gray-400 text-sm">Trusted by maritime professionals globally.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">P</span>
+                        </div>
+                        <span class="text-white font-bold text-lg">PenLog</span>
+                    </div>
+                    <p class="text-sm">Professional penetration management for ship dry docks.</p>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#signin" class="hover:text-white transition">Sign In</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#privacy" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#terms" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>Email: <a href="mailto:neil@whitebridgemarine.com" class="hover:text-white transition">neil@whitebridgemarine.com</a></li>
+                        <li>Built by maritime professionals</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-sm text-center">
+                <p>&copy; 2025 PenLog. Professional penetration management for maritime drydocks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
