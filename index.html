@@ -1007,25 +1007,29 @@ document.addEventListener('keydown', function(event) {
     closeRequestModal();
   }
 });
+
 <script>
-
-// Mobile menu toggle
-document.getElementById('mobile-menu-button').addEventListener('click', function() {
-    const menu = document.getElementById('mobile-menu');
-    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+// Mobile menu toggle - wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
     
-    this.setAttribute('aria-expanded', !isExpanded);
-    menu.classList.toggle('hidden');
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', function() {
-        document.getElementById('mobile-menu').classList.add('hidden');
-        document.getElementById('mobile-menu-button').setAttribute('aria-expanded', 'false');
-    });
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a, #mobile-menu button').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    } else {
+        console.error('Mobile menu elements not found');
+    }
 });
 </script>
-
-</body>
-</html>
