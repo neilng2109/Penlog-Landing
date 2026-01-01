@@ -1022,5 +1022,33 @@ function toggleMobileMenu() {
 }
 </script>
 
+<script>
+console.log('Script running...');
+console.log('Menu button:', document.getElementById('mobile-menu-button'));
+console.log('Mobile menu:', document.getElementById('mobile-menu'));
+
+function toggleMobileMenu() {
+    console.log('Toggle function called!');
+    const menu = document.getElementById('mobile-menu');
+    const button = document.getElementById('mobile-menu-button');
+    
+    console.log('Menu element:', menu);
+    console.log('Button element:', button);
+    
+    if (menu) {
+        menu.classList.toggle('hidden');
+        console.log('Toggled! Hidden class:', menu.classList.contains('hidden'));
+    } else {
+        console.log('ERROR: Menu not found!');
+    }
+}
+
+// Test it immediately
+setTimeout(function() {
+    console.log('Trying to click programmatically...');
+    toggleMobileMenu();
+}, 1000);
+</script>
+
 </body>
 </html>
