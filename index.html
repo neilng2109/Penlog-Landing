@@ -545,40 +545,72 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-navy-950 text-gray-400 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <!-- Column 1 -->
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold">P</span>
-                        </div>
-                        <span class="text-white font-bold text-lg">PenLog</span>
-                    </div>
-                    <p class="text-sm">Professional penetration management for ship dry docks.</p>
-                </div>
-                
-                <!-- Column 2 -->
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Product</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
-                        <li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
-                        <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
-                        <li><a href="#signin" class="hover:text-white transition">Sign In</a></li>
-                    </ul>
-                </div>
-               
-                <!-- Column 3 (was Column 4) -->
+	<footer class="bg-navy-950 text-gray-400 py-12">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid md:grid-cols-3 gap-8 mb-8">
+				<!-- Column 1: Logo/Description -->
 				<div>
-					<h4 class="text-white font-semibold mb-4">Connect</h4>
+					<div class="flex items-center space-x-2 mb-4">
+						<div class="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold">P</span>
+						</div>
+						<span class="text-white font-bold text-lg">PenLog</span>
+					</div>
+					<p class="text-sm">Professional penetration management for ship dry docks.</p>
+				</div>
+				
+				<!-- Column 2: Product Links -->
+				<div>
+					<h4 class="text-white font-semibold mb-4">Product</h4>
 					<ul class="space-y-2 text-sm">
-						<li>Email: <a href="mailto:neil@whitebridgemarine.com" class="hover:text-white transition">neil@whitebridgemarine.com</a></li>
-						<li>Built by maritime professionals</li>
-						<li class="pt-2"><a href="#" class="text-gray-500 hover:text-white transition text-xs">Legal & Privacy (Coming Soon)</a></li>
+						<li><a href="#features" class="hover:text-white transition">Features</a></li>
+						<li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
+						<li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+						<li><a href="https://app.penlog.io/login" class="hover:text-white transition">Sign In</a></li>
 					</ul>
 				</div>
+				
+				<!-- Column 3: Connect -->
+				<div>
+					<h4 class="text-white font-semibold mb-4">Connect</h4>
+					<ul class="space-y-3 text-sm">
+						<li>Email: <a href="mailto:neil@whitebridgemarine.com" class="hover:text-white transition">neil@whitebridgemarine.com</a></li>
+						<li>
+							<a class="libutton" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=neil-gordon-40740932" target="_blank">Follow on LinkedIn</a>
+						</li>
+						<li class="pt-2">Built by maritime professionals</li>
+						<li><a href="#" class="text-gray-500 hover:text-white transition text-xs">Legal & Privacy (Coming Soon)</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="border-t border-gray-800 pt-8 text-sm text-center">
+				<p>&copy; 2025 PenLog. Professional penetration management for maritime drydocks. All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+
+	<style>
+		.libutton {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 7px;
+			text-align: center;
+			outline: none;
+			text-decoration: none !important;
+			color: #ffffff !important;
+			width: 200px;
+			height: 32px;
+			border-radius: 16px;
+			background-color: #0A66C2;
+			font-family: "SF Pro Text", Helvetica, sans-serif;
+			transition: background-color 0.2s;
+		}
+		.libutton:hover {
+			background-color: #084d8f;
+		}
+	</style>
                
                       
             <div class="border-t border-gray-800 pt-8 text-sm text-center">
