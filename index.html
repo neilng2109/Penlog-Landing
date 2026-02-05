@@ -58,38 +58,39 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: #f9fafb;
-
-        /* Using a 'linear-gradient' trick to force sharp 1px lines */
+        
+        /* High-Contrast Technical Grid */
+        /* We use 1.5px and slightly darker colors for visibility */
         background-image: 
             /* Major grid (Every 160px) */
-            linear-gradient(rgba(100, 116, 139, 0.2) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(100, 116, 139, 0.2) 1px, transparent 1px),
+            linear-gradient(rgba(100, 116, 139, 0.3) 1.5px, transparent 1.5px),
+            linear-gradient(90deg, rgba(100, 116, 139, 0.3) 1.5px, transparent 1.5px),
             /* Minor grid (Every 32px) */
-            linear-gradient(rgba(100, 116, 139, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(100, 116, 139, 0.08) 1px, transparent 1px);
+            linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(100, 116, 139, 0.12) 1px, transparent 1px);
         
         background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
-        
-        /* Force the browser to render the background sharply */
-        background-position: -0.5px -0.5px;
+        background-attachment: fixed;
     }
 
-    /* Keep the sections transparent enough to see the grid, but solid enough for text */
+    /* This is the fix for the Hero section:
+       We force the background to be transparent so the body grid shows through.
+    */
+    section.bg-gradient-to-b {
+        background: transparent !important;
+    }
+
+    /* Keep sections slightly transparent (0.85) so the grid peeks through, 
+       but text remains 100% readable. 
+    */
     section.bg-white, .bg-white {
-        background-color: rgba(255, 255, 255, 0.9) !important;
-        border-bottom: 1px solid #e5e7eb;
+        background-color: rgba(255, 255, 255, 0.85) !important;
     }
-
+    
     section.bg-gray-50, .bg-gray-50 {
-        background-color: rgba(249, 250, 251, 0.9) !important;
+        background-color: rgba(249, 250, 251, 0.85) !important;
     }
-
-    /* Removing the blur filter entirely */
-    .backdrop-blur-md, .backdrop-filter {
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-    }
-
+    
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Space Grotesk', 'Inter', sans-serif;
     }
