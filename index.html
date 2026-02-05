@@ -102,7 +102,7 @@
     }
 	/* This makes the white sections look like they are hovering over the grid */
     section.bg-white {
-        margin: 4rem auto;      /* Adds space above/below and centers it */
+        margin: 2rem auto;      /* Adds space above/below and centers it */
         max-width: 90%;         /* Pulls the edges in so you see the grid on the sides */
         border-radius: 1.5rem;  /* Rounded "document" corners */
         box-shadow: 
@@ -120,7 +120,47 @@
             border-radius: 0;
         }
     }
-	
+	/* --- BLUEPRINT DARK MODE --- */
+@media (prefers-color-scheme: dark) {
+    body {
+        /* Deep Navy/Charcoal Background */
+        background-color: #0f172a; 
+        
+        /* Light Cyan/Steel Blue Grid Lines */
+        background-image: 
+            linear-gradient(rgba(56, 189, 248, 0.2) 1.5px, transparent 1.5px),
+            linear-gradient(90deg, rgba(56, 189, 248, 0.2) 1.5px, transparent 1.5px),
+            linear-gradient(rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
+    }
+
+    /* Floating sections in Dark Mode */
+    section.bg-white, .bg-white {
+        background-color: #1e293b !important; /* Slate Blue-Gray */
+        color: #f1f5f9; /* Off-white text */
+        border: 1px solid rgba(56, 189, 248, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Adjusting headings for dark background */
+    h1, h2, h3, h4, .text-gray-900 {
+        color: #f8fafc !important;
+    }
+
+    /* Softening the hero text so it's not blinding */
+    .text-gray-600, .text-slate-600 {
+        color: #94a3b8 !important;
+    }
+
+    /* Keeping the Hero section slightly transparent to see the blue grid */
+    section.bg-gradient-to-b {
+        background: linear-gradient(
+            to bottom,
+            rgba(15, 23, 42, 0.55),
+            rgba(30, 41, 59, 0.55)
+        ) !important;
+    }
+}
 	
 	
 </style>
