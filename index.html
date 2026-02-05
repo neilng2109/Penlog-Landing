@@ -123,12 +123,42 @@
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Space Grotesk', 'Inter', sans-serif;
     }
+	/* Custom Button Styles */
+	.btn-industrial {
+		position: relative;
+		border-radius: 4px !important;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		transition: all 0.2s ease;
+		border: 1px solid #1e293b;
+		/* Hard shadow for a "tactile" look */
+		box-shadow: 3px 3px 0px 0px #1e293b;
+	}
+
+	.btn-industrial:hover {
+		transform: translate(-1px, -1px);
+		box-shadow: 4px 4px 0px 0px #1e293b;
+	}
+
+	.btn-industrial:active {
+		transform: translate(2px, 2px);
+		box-shadow: 0px 0px 0px 0px #1e293b;
+	}
+
+	/* Primary Button (Navy) */
+	.btn-primary-eto {
+		background-color: #243b53 !important;
+		color: white !important;
+	}
+
+	/* Secondary Button (Clear/Border) */
+	.btn-secondary-eto {
+		background-color: white !important;
+		color: #243b53 !important;
+	}
 
 
-
-
-	
-	
 </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -146,15 +176,15 @@
                 </div>
                 
                 <!-- Nav Links -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-600 hover:text-navy-800 transition">Features</a>
-                    <a href="#how-it-works" class="text-gray-600 hover:text-navy-800 transition">How It Works</a>
-                    <a href="#faq" class="text-gray-600 hover:text-navy-800 transition">FAQ</a>
-                    <a href="https://app.penlog.io/login" class="text-gray-600 hover:text-navy-800 transition">Sign In</a>
-                    <button onclick="openRequestModal()" class="bg-navy-800 text-white px-6 py-2 rounded-lg hover:bg-navy-900 transition font-medium">
-                        Request Access
-                    </button>
-                </div>
+                <div class="hidden md:flex items-center space-x-8 font-mono text-xs uppercase tracking-widest">
+					<a href="#features" class="text-gray-600 hover:text-navy-800 transition">Features</a>
+					<a href="#how-it-works" class="text-gray-600 hover:text-navy-800 transition">How It Works</a>
+					<a href="#faq" class="text-gray-600 hover:text-navy-800 transition">FAQ</a>
+					<a href="https://app.penlog.io/login" class="text-gray-600 hover:text-navy-800 transition">Sign In</a>
+					<button onclick="openRequestModal()" class="btn-industrial btn-primary-eto px-5 py-1.5">
+						Request Access
+					</button>
+				</div>
                 
                <!-- Mobile Menu Button -->
 <div class="md:hidden">
