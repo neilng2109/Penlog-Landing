@@ -57,61 +57,36 @@
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background: 
-               /* Minor grid */
-			  linear-gradient(
-				to right,
-				rgba(100,116,139,0.15) 1px,
-				transparent 1px
-			  ),
-			  linear-gradient(
-				to bottom,
-				rgba(100,116,139,0.15) 1px,
-				transparent 1px
-			  ),
-
-			  /* Major grid */
-			  linear-gradient(
-				to right,
-				rgba(100,116,139,0.28) 1px,
-				transparent 1px
-			  ),
-			  linear-gradient(
-				to bottom,
-				rgba(100,116,139,0.28) 1px,
-				transparent 1px
-			  );
-
-			background-size:
-			  32px 32px,   /* minor */
-			  32px 32px,
-			  160px 160px, /* major (5×32) */
-			  160px 160px;
-
-			background-color: #f9fafb;
-			
-			)
-    
-    /* Make section backgrounds more transparent to show grid */
-    section.bg-white,
-    .bg-white {
-        background-color: rgba(255, 255, 255, 0.7) !important;
+        background-color: #f9fafb;
+        background-image: 
+            /* Major grid (Darker lines) */
+            linear-gradient(to right, rgba(100, 116, 139, 0.18) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(100, 116, 139, 0.18) 1px, transparent 1px),
+            /* Minor grid (Fainter lines) */
+            linear-gradient(to right, rgba(100, 116, 139, 0.06) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(100, 116, 139, 0.06) 1px, transparent 1px);
+        
+        /* Sub-grid math: 5 minor squares (32px) inside 1 major square (160px) */
+        background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+        background-attachment: fixed;
     }
-    
-    section.bg-gray-50,
-    .bg-gray-50 {
-        background-color: rgba(249, 250, 251, 0.7) !important;
+
+    /* Glassmorphism: Makes sections pop while showing the grid underneath */
+    section.bg-white, .bg-white, section.bg-gray-50, .bg-gray-50 {
+        background-color: rgba(255, 255, 255, 0.8) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px); /* Safari support */
     }
-    
-    /* Fix hero gradient to be transparent */
+
+    /* Hero gradient transparency */
     .bg-gradient-to-b {
         background: linear-gradient(
             to bottom,
-            rgba(255, 255, 255, 0.7),
-            rgba(249, 250, 251, 0.7)
+            rgba(255, 255, 255, 0.4),
+            rgba(249, 250, 251, 0.2)
         ) !important;
     }
-    
+
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Space Grotesk', 'Inter', sans-serif;
     }
