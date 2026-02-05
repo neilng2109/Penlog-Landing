@@ -58,33 +58,36 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: #f9fafb;
+
+        /* Using a 'linear-gradient' trick to force sharp 1px lines */
         background-image: 
-            /* Major grid (Darker lines) */
-            linear-gradient(to right, rgba(100, 116, 139, 0.18) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(100, 116, 139, 0.18) 1px, transparent 1px),
-            /* Minor grid (Fainter lines) */
-            linear-gradient(to right, rgba(100, 116, 139, 0.06) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(100, 116, 139, 0.06) 1px, transparent 1px);
+            /* Major grid (Every 160px) */
+            linear-gradient(rgba(100, 116, 139, 0.2) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(100, 116, 139, 0.2) 1px, transparent 1px),
+            /* Minor grid (Every 32px) */
+            linear-gradient(rgba(100, 116, 139, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(100, 116, 139, 0.08) 1px, transparent 1px);
         
-        /* Sub-grid math: 5 minor squares (32px) inside 1 major square (160px) */
         background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
-        background-attachment: fixed;
+        
+        /* Force the browser to render the background sharply */
+        background-position: -0.5px -0.5px;
     }
 
-    /* Glassmorphism: Makes sections pop while showing the grid underneath */
-    section.bg-white, .bg-white, section.bg-gray-50, .bg-gray-50 {
-        background-color: rgba(255, 255, 255, 0.8) !important;
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px); /* Safari support */
+    /* Keep the sections transparent enough to see the grid, but solid enough for text */
+    section.bg-white, .bg-white {
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        border-bottom: 1px solid #e5e7eb;
     }
 
-    /* Hero gradient transparency */
-    .bg-gradient-to-b {
-        background: linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.4),
-            rgba(249, 250, 251, 0.2)
-        ) !important;
+    section.bg-gray-50, .bg-gray-50 {
+        background-color: rgba(249, 250, 251, 0.9) !important;
+    }
+
+    /* Removing the blur filter entirely */
+    .backdrop-blur-md, .backdrop-filter {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
 
     h1, h2, h3, h4, h5, h6 {
