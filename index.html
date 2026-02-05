@@ -59,13 +59,10 @@
         -moz-osx-font-smoothing: grayscale;
         background-color: #f9fafb;
         
-        /* High-Contrast Technical Grid */
-        /* We use 1.5px and slightly darker colors for visibility */
+        /* High-Contrast Technical Grid (Your preferred version) */
         background-image: 
-            /* Major grid (Every 160px) */
-            linear-gradient(rgba(36, 59, 83, 0.35) 1.5px, transparent 1.5px),
-			linear-gradient(90deg, rgba(36, 59, 83, 0.35) 1.5px, transparent 1.5px),
-            /* Minor grid (Every 32px) */
+            linear-gradient(rgba(100, 116, 139, 0.3) 1.5px, transparent 1.5px),
+            linear-gradient(90deg, rgba(100, 116, 139, 0.3) 1.5px, transparent 1.5px),
             linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px),
             linear-gradient(90deg, rgba(100, 116, 139, 0.12) 1px, transparent 1px);
         
@@ -73,24 +70,33 @@
         background-attachment: fixed;
     }
 
-    /* This is the fix for the Hero section:
-       We force the background to be transparent so the body grid shows through.
-    */
+    /* Keep the Hero section transparency exactly as it was */
     section.bg-gradient-to-b {
-        background: transparent !important;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.7),
+            rgba(249, 250, 251, 0.7)
+        ) !important;
     }
 
-    /* Keep sections slightly transparent (0.85) so the grid peeks through, 
-       but text remains 100% readable. 
-    */
-    section.bg-white, .bg-white {
-        background-color: rgba(255, 255, 255, 0.85) !important;
+    /* Make the Dashboard section 100% solid white (No Grid showing through) */
+    section.py-20.bg-white {
+        background-color: #ffffff !important;
     }
-    
-    section.bg-gray-50, .bg-gray-50 {
+
+    /* Standard sections (Features, FAQ) - subtle grid visibility */
+    section.bg-gray-50, 
+    .bg-gray-50,
+    #features,
+    #faq {
         background-color: rgba(249, 250, 251, 0.85) !important;
     }
-    
+
+    /* Comparison Table - solid white for clear reading */
+    .bg-white.rounded-2xl.shadow-xl {
+        background-color: #ffffff !important;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Space Grotesk', 'Inter', sans-serif;
     }
