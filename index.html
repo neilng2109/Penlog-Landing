@@ -100,6 +100,29 @@
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Space Grotesk', 'Inter', sans-serif;
     }
+	/* This makes the white sections look like they are hovering over the grid */
+    section.bg-white {
+        margin: 4rem auto;      /* Adds space above/below and centers it */
+        max-width: 90%;         /* Pulls the edges in so you see the grid on the sides */
+        border-radius: 1.5rem;  /* Rounded "document" corners */
+        box-shadow: 
+            0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+            0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        background-color: #ffffff !important;
+        overflow: hidden;       /* Keeps content inside the rounded corners */
+    }
+
+    /* On mobile, we remove the "float" effect so we don't waste precious screen width */
+    @media (max-width: 768px) {
+        section.bg-white {
+            margin: 0;
+            max-width: 100%;
+            border-radius: 0;
+        }
+    }
+	
+	
+	
 </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
