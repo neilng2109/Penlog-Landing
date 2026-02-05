@@ -58,7 +58,20 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background: 
-              linear-gradient(
+               /* Minor grid */
+			  linear-gradient(
+				to right,
+				rgba(100,116,139,0.15) 1px,
+				transparent 1px
+			  ),
+			  linear-gradient(
+				to bottom,
+				rgba(100,116,139,0.15) 1px,
+				transparent 1px
+			  ),
+
+			  /* Major grid */
+			  linear-gradient(
 				to right,
 				rgba(100,116,139,0.28) 1px,
 				transparent 1px
@@ -69,9 +82,15 @@
 				transparent 1px
 			  );
 
-			background-size: 49px 49px; /* or 64px */
+			background-size:
+			  32px 32px,   /* minor */
+			  32px 32px,
+			  160px 160px, /* major (5×32) */
+			  160px 160px;
+
 			background-color: #f9fafb;
-				}
+			
+			)
     
     /* Make section backgrounds more transparent to show grid */
     section.bg-white,
