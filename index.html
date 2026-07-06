@@ -298,11 +298,19 @@
             </p>
         </div>
         
-        <!-- Real Dashboard Screenshot -->
+        <!-- Real Dashboard Screenshot (in a browser frame so the dark UI reads well on white) -->
         <div class="max-w-6xl mx-auto">
-            <img src="dashboard-screenshot.png" 
-                 alt="PenLog Dashboard showing real-time penetration tracking across multiple contractors" 
-                 class="rounded-md shadow-2xl w-full border border-gray-200">
+            <div class="rounded-xl shadow-2xl overflow-hidden" style="border:1px solid #16202e;">
+                <div style="display:flex;align-items:center;gap:8px;padding:11px 16px;background:#1a2b3d;border-bottom:1px solid #24384f;">
+                    <span style="width:12px;height:12px;border-radius:9999px;background:#ff5f57;display:inline-block;"></span>
+                    <span style="width:12px;height:12px;border-radius:9999px;background:#febc2e;display:inline-block;"></span>
+                    <span style="width:12px;height:12px;border-radius:9999px;background:#28c840;display:inline-block;"></span>
+                    <span style="margin-left:12px;font-size:12px;color:#8fa3bd;">app.penlog.io</span>
+                </div>
+                <img src="dashboard-screenshot.png"
+                     alt="PenLog Dashboard showing real-time penetration tracking across multiple contractors"
+                     class="w-full" style="display:block;">
+            </div>
             <p class="text-center text-sm text-gray-500 mt-4">
                 Live dashboard from drydock • Managing penetrations across multiple contractors
             </p>
