@@ -1,0 +1,20 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Arial,34,&H00FFFFFF,&H000000FF,&H50000000,&H50000000,0,0,0,0,100,100,0,0,3,6,0,2,60,60,55,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:10.00,0:00:14.00,Cap,,0,0,0,,{\fad(300,300)}Every penetration. One source of truth.
+Dialogue: 0,0:00:15.00,0:00:23.00,Cap,,0,0,0,,{\fad(300,300)}Track across every contractor, in real time.
+Dialogue: 0,0:00:36.00,0:00:47.00,Cap,,0,0,0,,{\fad(300,300)}Photo-documented. Audit-ready.
+Dialogue: 0,0:01:20.00,0:01:45.00,Cap,,0,0,0,,{\fad(300,300)}Contractors update directly — no logins, no accounts.
+Dialogue: 0,0:01:55.00,0:02:22.00,Cap,,0,0,0,,{\fad(300,300)}The pipeline updates instantly.
+Dialogue: 0,0:02:23.00,0:02:44.00,Cap,,0,0,0,,{\fad(300,300)}One click to Flag-State-ready documentation.
+Dialogue: 0,0:02:56.00,0:03:05.00,Cap,,0,0,0,,{\fad(300,300)}PenLog — dry dock penetrations, under control.
