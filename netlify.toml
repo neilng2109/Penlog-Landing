@@ -1,0 +1,19 @@
+# Reverse-proxy PostHog through penlog.io so ad-blockers (which blocklist
+# *.posthog.com) don't drop analytics. Requests go to /ingest/* on our own
+# domain and Netlify forwards them to PostHog EU.
+#
+# Order matters: Netlify uses the first matching rule, so the more specific
+# /static rule (assets/array.js) must come before the /ingest/* catch-all
+# (event ingestion, /decide, session recording, etc.).
+
+[[redirects]]
+  from = "/ingest/static/*"
+  to = "https://eu-assets.i.posthog.com/static/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/ingest/*"
+  to = "https://eu.i.posthog.com/:splat"
+  status = 200
+  force = true
