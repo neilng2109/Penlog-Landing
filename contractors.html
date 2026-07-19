@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Contractors - PenLog</title>
+    <meta name="description" content="How contractors log penetration work in PenLog: scan a link, pick a pen, add photos, submit. No app to install, no password, and it works offline at sea.">
+
+    <!-- PostHog analytics (EU). Privacy-light: in-memory persistence (no cookies) and all inputs masked. -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_mMfBeERgmMj5LcYSXnzhBejPKCHY8SL3ucuGrui2TUL2', {
+            api_host: 'https://penlog.io/ingest',
+            ui_host: 'https://eu.posthog.com',
+            person_profiles: 'identified_only',
+            persistence: 'memory',
+            autocapture: true,
+            capture_pageview: true,
+            session_recording: { maskAllInputs: true }
+        })
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: {
+                'navy': { 50:'#f0f4f8',100:'#d9e2ec',200:'#bcccdc',300:'#9fb3c8',400:'#829ab1',500:'#627d98',600:'#486581',700:'#334e68',800:'#243b53',900:'#1a2b3d',950:'#0f1e2e' },
+                'teal': { 50:'#f0fdfa',100:'#ccfbf1',200:'#99f6e4',300:'#5eead4',400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',700:'#0f766e',800:'#115e59',900:'#134e4a' }
+            } } }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+            background-color: #f1f5f9;
+            background-image:
+                linear-gradient(rgba(56, 189, 248, 0.25) 1.5px, transparent 1.5px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.25) 1.5px, transparent 1.5px),
+                linear-gradient(rgba(100, 116, 139, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(100, 116, 139, 0.1) 1px, transparent 1px);
+            background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+            background-attachment: fixed;
+        }
+        h1, h2, h3 { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+        .phone { border-radius: 24px; border: 1px solid #e5e7eb; background: #0f1e2e;
+                 box-shadow: 0 12px 34px rgba(15,30,46,.16); overflow: hidden; width: 195px; max-width: 60vw; }
+        .phone img { display: block; width: 100%; height: auto; }
+        .step-num { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">P</span>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-navy-900 leading-none block">PenLog</span>
+                        <span class="text-[10px] text-gray-400 font-medium tracking-wide leading-none">by Whitebridge Marine</span>
+                    </div>
+                </a>
+                <div class="flex items-center gap-5 sm:gap-8 font-mono text-xs uppercase tracking-widest">
+                    <a href="/" class="hidden sm:inline text-gray-600 hover:text-navy-800 transition">Home</a>
+                    <a href="/#how-it-works" class="hidden sm:inline text-gray-600 hover:text-navy-800 transition">How it works</a>
+                    <a href="https://app.penlog.io/login" class="text-gray-600 hover:text-navy-800 transition">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="py-8 md:py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="font-mono text-xs uppercase tracking-[0.25em] text-teal-600 mb-3">For Contractors</p>
+            <h1 class="text-3xl md:text-4xl font-bold text-navy-900 leading-tight mb-3" style="text-wrap:balance">Log your work in under a minute</h1>
+            <p class="text-base text-gray-600 max-w-2xl mx-auto">You've been sent a link or QR code &mdash; no password, no app to install. Here's the whole job, start to finish.</p>
+        </div>
+    </header>
+
+    <!-- Steps -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 pb-4">
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 md:p-6 flex flex-col md:flex-row items-center gap-6">
+            <div class="flex-1">
+                <div class="step-num w-9 h-9 rounded-full bg-teal-500 text-white font-bold text-base flex items-center justify-center mb-4">1</div>
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Open your link</h2>
+                <p class="text-gray-600">Scan the QR code or tap the link your supervisor sent. You're straight in &mdash; <strong class="text-navy-900">no password, no sign-up.</strong></p>
+            </div>
+            <div class="shrink-0"><div class="phone"><img src="img/contractors/01-qr.png" alt="Contractor QR-code login screen"></div></div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 md:p-6 flex flex-col md:flex-row-reverse items-center gap-6">
+            <div class="flex-1">
+                <div class="step-num w-9 h-9 rounded-full bg-teal-500 text-white font-bold text-base flex items-center justify-center mb-4">2</div>
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Choose your pen</h2>
+                <p class="text-gray-600 mb-2"><strong class="text-navy-900">Tap a penetration</strong> in your list to update it &mdash; or tap <strong class="text-navy-900">+ Report New Pen</strong> to log a new one.</p>
+                <p class="text-gray-600">For a new pen, just enter the <strong class="text-navy-900">deck, frame and location</strong>; the Pen&nbsp;ID and fire zone are worked out for you.</p>
+            </div>
+            <div class="shrink-0 flex gap-3">
+                <div class="phone" style="width:152px"><img src="img/contractors/02-list.png" alt="List of penetrations to choose from"></div>
+                <div class="phone" style="width:152px"><img src="img/contractors/03-newpen.png" alt="Reporting a new pen: deck, frame and location"></div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 md:p-6 flex flex-col md:flex-row items-center gap-6">
+            <div class="flex-1">
+                <div class="step-num w-9 h-9 rounded-full bg-teal-500 text-white font-bold text-base flex items-center justify-center mb-4">3</div>
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Say what you did</h2>
+                <p class="text-gray-600">Tap <strong class="text-navy-900">Opening Pen</strong> or <strong class="text-navy-900">Closing Pen</strong>, and add a note if it helps.</p>
+            </div>
+            <div class="shrink-0"><div class="phone"><img src="img/contractors/04-action.png" alt="Choosing Opening or Closing, with a notes field"></div></div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 md:p-6 flex flex-col md:flex-row-reverse items-center gap-6">
+            <div class="flex-1">
+                <div class="step-num w-9 h-9 rounded-full bg-teal-500 text-white font-bold text-base flex items-center justify-center mb-4">4</div>
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Add your photos</h2>
+                <p class="text-gray-600">Tap <strong class="text-navy-900">Add Photos</strong> and take your before / after shots. <strong class="text-navy-900">You need at least 2 photos to close a pen</strong> &mdash; they're your proof the work's done.</p>
+            </div>
+            <div class="shrink-0"><div class="phone"><img src="img/contractors/05-photos.png" alt="A photo added to the pen report"></div></div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 md:p-6 flex flex-col md:flex-row items-center gap-6">
+            <div class="flex-1">
+                <div class="step-num w-9 h-9 rounded-full bg-teal-500 text-white font-bold text-base flex items-center justify-center mb-4">5</div>
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Submit &mdash; and you're done</h2>
+                <p class="text-gray-600 mb-3">Tap <strong class="text-navy-900">Submit Report</strong>. That's it.</p>
+                <div class="bg-teal-50 border border-teal-100 rounded-lg p-4 text-sm text-teal-900">
+                    <strong>No signal on the ship?</strong> No problem &mdash; it saves on your phone and uploads by itself the moment you have signal. It's safe to close the app.
+                </div>
+            </div>
+            <div class="shrink-0"><div class="phone"><img src="img/contractors/06-done.png" alt="Saved confirmation with offline-sync message"></div></div>
+        </div>
+    </main>
+
+    <!-- Quick reminders + support -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 pt-4">
+        <div class="bg-navy-900 rounded-2xl p-8 text-white">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 text-sm">
+                <div><div class="font-semibold mb-1">Your link is just for you</div><div class="text-gray-300">Don't share it around.</div></div>
+                <div><div class="font-semibold mb-1">2 photos minimum</div><div class="text-gray-300">Needed to close a pen.</div></div>
+                <div><div class="font-semibold mb-1">Works offline</div><div class="text-gray-300">Nothing gets lost at sea.</div></div>
+                <div><div class="font-semibold mb-1">Stuck?</div><a href="tel:+36702386441" class="text-teal-400 hover:text-teal-300 transition">Call +36&nbsp;70&nbsp;238&nbsp;6441</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (matches home) -->
+    <footer class="bg-navy-950 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center"><span class="text-white font-bold">P</span></div>
+                        <div>
+                            <span class="text-white font-bold text-lg leading-none block">PenLog</span>
+                            <span class="text-[10px] text-gray-500 leading-none">by Whitebridge Marine</span>
+                        </div>
+                    </div>
+                    <p class="text-sm">Professional penetration management for ship dry docks.</p>
+                    <p class="text-sm mt-3">A product of <a href="https://whitebridgemarine.com" target="_blank" class="text-teal-400 hover:text-teal-300 transition">Whitebridge Marine Ltd</a>.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="/#how-it-works" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="contractors.html" class="hover:text-white transition">For Contractors</a></li>
+                        <li><a href="https://app.penlog.io/login" class="hover:text-white transition">Sign In</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li>Email: <a href="mailto:neil@whitebridgemarine.com" class="hover:text-white transition">neil@whitebridgemarine.com</a></li>
+                        <li><a href="terms.html" class="text-gray-500 hover:text-white transition text-xs">Terms &amp; Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-sm text-center">
+                <p>&copy; 2026 Whitebridge Marine Ltd. PenLog is a Whitebridge Marine product. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
