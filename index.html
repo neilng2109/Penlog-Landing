@@ -197,6 +197,7 @@
                 <div class="hidden md:flex items-center space-x-8 font-mono text-xs uppercase tracking-widest">
 					<a href="#features" class="text-gray-600 hover:text-navy-800 transition">Features</a>
 					<a href="#how-it-works" class="text-gray-600 hover:text-navy-800 transition">How It Works</a>
+					<a href="#fire-status" class="text-gray-600 hover:text-navy-800 transition">Fire Status</a>
 					<a href="#faq" class="text-gray-600 hover:text-navy-800 transition">FAQ</a>
 					<a href="https://app.penlog.io/login" class="text-gray-600 hover:text-navy-800 transition">Sign In</a>
 					<button onclick="openRequestModal()" class="btn-industrial btn-primary-eto px-5 py-1.5">
@@ -224,6 +225,7 @@
             <div class="px-4 pt-2 pb-3 space-y-1">
                 <a href="#features" class="block px-3 py-2 rounded-md text-gray-600 hover:text-navy-800 hover:bg-gray-100 transition">Features</a>
                 <a href="#how-it-works" class="block px-3 py-2 rounded-md text-gray-600 hover:text-navy-800 hover:bg-gray-100 transition">How It Works</a>
+                <a href="#fire-status" class="block px-3 py-2 rounded-md text-gray-600 hover:text-navy-800 hover:bg-gray-100 transition">Fire Status</a>
                 <a href="#faq" class="block px-3 py-2 rounded-md text-gray-600 hover:text-navy-800 hover:bg-gray-100 transition">FAQ</a>
                 <a href="https://app.penlog.io/login" class="block px-3 py-2 rounded-md text-gray-600 hover:text-navy-800 hover:bg-gray-100 transition">Sign In</a>
                 <button onclick="openRequestModal()" class="w-full text-left px-3 py-2 rounded-md bg-navy-800 text-white hover:bg-navy-900 transition font-medium mt-2">
@@ -253,7 +255,8 @@
                 
                 <!-- Subheadline -->
                 <p class="text-xl text-gray-600 mb-10 leading-relaxed">
-                    Professional penetration management for maritime drydocks. Real-time tracking across contractors. 
+                    Professional penetration management for maritime drydocks. Real-time tracking across contractors.
+                    Every penetration through a fire-rated division, logged as it happens.
                     SOLAS-ready documentation. Built by maritime professionals who understand your workflow.
                 </p>
                 
@@ -375,7 +378,7 @@
                         </svg>
                     </div>
                     <h3 class="text-lg font-bold text-navy-900 mb-2">Flag State Reports</h3>
-                    <p class="text-gray-600">One-click, survey-grade close-out report: vessel identity, per-penetration records with photos, outstanding items, and a full audit trail — structured to SOLAS II-2 Reg. 9 for class and flag-state review.</p>
+                    <p class="text-gray-600">One-click, survey-grade close-out report: vessel identity, per-penetration records with photos, outstanding items, and a full audit trail — structured to SOLAS II-2 Reg. 9 and IACS UR Z28 for class and flag-state review.</p>
                 </div>
                 
                 <!-- Feature 4 -->
@@ -431,6 +434,55 @@
                     </div>
                     <h3 class="text-lg font-bold text-navy-900 mb-2">Works With No Signal</h3>
                     <p class="text-gray-600">Offline-first and web-based — works in any shipyard, on any device, signal or not. Captures sync automatically when you're back online. No app store, no infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fire Integrity Status -->
+    <section id="fire-status" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text -->
+                <div>
+                    <div class="inline-flex items-center space-x-2 bg-teal-50 text-teal-700 px-4 py-2 rounded-full mb-6">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18a3.75 3.75 0 00.495-7.468 5.99 5.99 0 00-1.925 3.547 5.975 5.975 0 01-2.133-1.001A3.75 3.75 0 0012 18z"/>
+                        </svg>
+                        <span class="font-medium">New: Daily Fire Integrity Status</span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-navy-900 mb-6">Know Which Fire Boundaries Are Open, Every Morning</h2>
+                    <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
+                        <p>On any given morning in a drydock, few people can say which fire boundaries are currently open. The record sits in a contractor's spreadsheet, updated when someone remembers, then reconciled in a rush before the surveyor arrives.</p>
+                        <p>PenLog generates a daily Fire Integrity Status sheet. One page, regenerated every morning, listing every penetration currently recorded as open, sorted by deck and fire zone, with the A-60 divisions flagged at the top because those are the main fire-resisting boundaries.</p>
+                        <p>It does not certify a boundary as intact and it says so plainly. It is a companion to the fire plan and the hot-work permit list, never a replacement. It goes to the people who need it during the dock: ship's safety officer, attending superintendent, yard safety office, fire patrol, ECR, and it is posted with the fire control plan.</p>
+                    </div>
+                </div>
+                <!-- Image -->
+                <div>
+                    <img src="assets/fire-integrity-status-mock.png"
+                         alt="PenLog daily Fire Integrity Status sheet showing open penetrations by deck and fire zone with A-60 divisions highlighted"
+                         class="rounded-md shadow-2xl w-full border border-gray-200">
+                </div>
+            </div>
+
+            <!-- Superintendent value block -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-navy-900 text-center mb-10">Built for the person who owns the dock, not just the deck.</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h4 class="text-lg font-bold text-navy-900 mb-2">Live oversight, off the ship.</h4>
+                        <p class="text-gray-600">See what is open, sealed, and verified across every contractor from your desk. No need to be on board to know where the fire boundaries stand.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h4 class="text-lg font-bold text-navy-900 mb-2">A record that survives survey.</h4>
+                        <p class="text-gray-600">A tamper-evident audit trail and a close-out report that assembles itself to SOLAS II-2 and UR Z28. No end-of-dock spreadsheet scramble.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h4 class="text-lg font-bold text-navy-900 mb-2">Zero setup on any vessel.</h4>
+                        <p class="text-gray-600">PenLog builds the record from the work as it happens. No upfront vessel mapping, no register to buy first. It works on any ship from day one of the dock.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -536,7 +588,7 @@
                             </tr>
                             <tr class="bg-gray-50">
                                 <td class="px-6 py-4 font-medium text-gray-900">Cost</td>
-                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">Free</td>
+                                <td class="px-6 py-4 text-center text-teal-600 font-semibold">Founding-rate pilots</td>
                                 <td class="px-6 py-4 text-center text-gray-500">Free (but manual)</td>
                                 <td class="px-6 py-4 text-center text-gray-500">Subscription fees</td>
                             </tr>
@@ -595,9 +647,8 @@
                 <div class="bg-gray-50 rounded-lg p-6">
                     <h3 class="text-lg font-bold text-navy-900 mb-2">How much does PenLog cost?</h3>
                     <p class="text-gray-600">
-                        PenLog offers flexible pricing based on your needs. We work with individual pen supervisors, 
-                        contractors, and fleet operators. Contact us to discuss the best option for your operation. 
-                        Early access users receive preferred pricing.
+                        PenLog is priced per drydock. We are currently running founding-rate pilots for early customers
+                        in exchange for a reference and a short case study. Contact us to discuss scope and pricing for your next dock.
                     </p>
                 </div>
                 
@@ -634,8 +685,8 @@
                 <div class="bg-gray-50 rounded-lg p-6">
                     <h3 class="text-lg font-bold text-navy-900 mb-2">Will Flag State surveyors accept PenLog documentation?</h3>
                     <p class="text-gray-600">
-                        PenLog generates documentation that meets SOLAS Chapter II-2 requirements for 
-						bulkhead penetrations. Classification Society surveyors (Lloyd's Register, DNV, 
+                        PenLog generates documentation that meets SOLAS Chapter II-2 and IACS UR Z28 requirements for
+						penetrations through fire-rated divisions. Classification Society surveyors (Lloyd's Register, DNV,
 						ABS, etc.) verify compliance during drydock based on the completeness and accuracy 
 						of your records - not which tool you used to create them.
 						
@@ -667,7 +718,9 @@
 				  Schedule Demo
 				</button>
             </div>
-            
+
+            <p class="text-center text-sm text-teal-300 mb-8">Ask about a founding-rate pilot on your next dock.</p>
+
             <p class="text-gray-400 text-sm">Trusted by maritime professionals globally.</p>
         </div>
     </section>
